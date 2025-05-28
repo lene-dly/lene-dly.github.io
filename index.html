@@ -544,7 +544,87 @@
 
         }
 
+         /* Carousel Styles */
+    .carousel {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        background: white;
+    }
+
+    .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+    }
+
+    .carousel-item {
+        min-width: 100%;
+        user-select: none;
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+    }
+
+    .carousel-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(58, 134, 255, 0.8);
+        border: none;
+        color: white;
+        font-size: 2rem;
+        padding: 0.2rem 0.8rem;
+        cursor: pointer;
+        border-radius: 50%;
+        z-index: 10;
+        user-select: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .carousel-control:hover {
+        background-color: var(--accent);
+    }
+
+    .carousel-control.prev {
+        left: 10px;
+    }
+
+    .carousel-control.next {
+        right: 10px;
+    }
+
+    .carousel-dots {
+        text-align: center;
+        padding: 1rem 0.5rem;
+        background: var(--light);
+        border-radius: 0 0 10px 10px;
+    }
+
+    .carousel-dots .dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin: 0 6px;
+        background-color: var(--gray);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .carousel-dots .dot.active {
+        background-color: var(--primary);
+    }
+
     </style>
+    
 </head>
 <body>
     <!-- Hero Section -->
@@ -553,10 +633,6 @@
             <h1>Bernalene B. Dulay</h1>
             <p>Computer Science Student at Gordon College</p>
             <span class="student-badge">Specializing in Server-Side Development, AI and Mobile Development</span>
-            <div style="margin-top: 2rem;">
-                <a href="#projects" class="btn">View My Projects</a>
-                <a href="#contact" class="btn" style="background: transparent; border: 2px solid white; margin-left: 1rem;">Contact Me</a>
-            </div>
         </div>
     </section>
 
@@ -565,7 +641,7 @@
         <div class="nav-container">
             <a href="#about" class="nav-link">About</a>
             <a href="#education" class="nav-link">Education</a>
-            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#projects" class="nav-link">Outputs</a>
             <a href="#skills" class="nav-link">Skills</a>
             <a href="#contact" class="nav-link">Contact</a>
         </div>
@@ -585,10 +661,6 @@
 To gain a comprehensive understanding, I actively work on full-stack web projects, connecting my backend systems with user interfaces. This versatility allows me to see the entire development process.
 
 My interests are expanding, and I'm excited to explore mobile development next. I'm a motivated learner, always looking for new technical challenges and opportunities to build impactful software.</p>
-                    <div style="margin-top: 2rem;">
-                        <a href="#" class="btn" style="margin-right: 1rem;"><i class="fas fa-file-pdf"></i> Download CV</a>
-                        <a href="https://github.com/yourusername" class="btn" style="background: var(--dark);"><i class="fab fa-github"></i> GitHub Profile</a>
-                    </div>
                 </div>
                 <div class="about-image">
                     <img src="Images/Photo_ID.jpg" alt="Your Name">
@@ -616,48 +688,77 @@ My interests are expanding, and I'm excited to explore mobile development next. 
     </section>
 
     <!-- Projects Section -->
+<!-- Projects Section -->
 <section id="projects">
     <div class="section-container">
         <div class="section-title">
-            <h2>Academic Projects</h2>
-            <p class="project-subtitle">Currently in Development</p>
+            <h2>OJT Training Outputs</h2>
+            <p class="project-subtitle">Screenshots from my training projects</p>
         </div>
-        <div class="projects-grid">
-            <!-- Project 1 - Centered Single Project -->
-            <div class="project-card single-project">
-                <div class="project-image">
-                    <div class="project-status">In Development</div>
-                    <img src="Images/PetMetLogo.jpg" alt="PetMet Project">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+            <a href="https://2018114838.wixsite.com/my-ojt-training-blog" target="_blank" rel="noopener" class="btn" style="max-width: 200px;">
+                Visit My Blog
+            </a>
+        </div>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="For Portfolio Projects/Php code first page folder.png" alt="Screenshot 1">
                 </div>
-                <div class="project-info">
-                    <h3>PetMet: Optimizing Pet Adoption Through NLP-Powered Matching</h3>
-                    <div class="project-description">
-                        <p>A web and mobile application designed to streamline pet adoption by connecting prospective owners with pets in their area using advanced NLP technology.</p>
-                        <ul class="project-features">
-                            <li><i class="fas fa-check-circle"></i> NLP-powered search engine understands natural language queries</li>
-                            <li><i class="fas fa-check-circle"></i> Location-based insights for nearby adoptable pets</li>
-                            <li><i class="fas fa-check-circle"></i> Cross-platform compatibility (web and mobile)</li>
-                        </ul>
-                        <div class="project-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 65%;"></div>
-                            </div>
-                            <span class="progress-text">Development Progress: 65%</span>
-                        </div>
-                    </div>
-                    <div class="project-tags">
-                        <span class="project-tag">Django</span>
-                        <span class="project-tag">Node.js</span>
-                        <span class="project-tag">MySQL</span>
-                        <span class="project-tag">React Native</span>
-                        <span class="project-tag">NLP</span>
-                    </div>
-                    <div class="project-actions">
-                        <button class="btn btn-outline" disabled>
-                            <i class="fas fa-external-link-alt"></i> Demo Coming Soon
-                        </button>
-                    </div>
+                <div class="carousel-item">
+                    <img src="For Portfolio Projects/Screenshot 2025-05-28 132243.png" alt="Screenshot 2">
                 </div>
+                <div class="carousel-item">
+                    <img src="For Portfolio Projects/Screenshot 2025-05-28 132314.png" alt="Screenshot 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="For Portfolio Projects/Screenshot 2025-05-28 132342.png" alt="Screenshot 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="For Portfolio Projects/Screenshot 2025-05-28 132437.png" alt="Screenshot 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="For Portfolio Projects/Screenshot 2025-05-28 132506.png" alt="Screenshot 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="For Portfolio Projects/Screenshot 2025-05-28 132531.png" alt="Screenshot 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="For Portfolio Projects/Screenshot 2025-05-28 132602.png" alt="Screenshot 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="For Portfolio Projects/Screenshot 2025-05-28 133458.png" alt="Screenshot 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="For Portfolio Projects/Screenshot 2025-05-28 133821.png" alt="Screenshot 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="For Portfolio Projects/Screenshot 2025-05-28 133848.png" alt="Screenshot 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="For Portfolio Projects/Screenshot 2025-05-28 134002.png" alt="Screenshot 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="For Portfolio Projects/Screenshot 2025-05-28 134259.png" alt="Screenshot 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="For Portfolio Projects/Screenshot 2025-05-28 134501.png" alt="Screenshot 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="For Portfolio Projects/Screenshot 2025-05-28 134528.png" alt="Screenshot 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="For Portfolio Projects/Screenshot 2025-05-28 134621.png" alt="Screenshot 3">
+                </div>
+                <!-- Add more carousel-item divs as needed -->
+            </div>
+            <button class="carousel-control prev" aria-label="Previous slide">&#10094;</button>
+            <button class="carousel-control next" aria-label="Next slide">&#10095;</button>
+            <div class="carousel-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <!-- Add more dots corresponding to the number of slides -->
             </div>
         </div>
     </div>
@@ -775,6 +876,19 @@ My interests are expanding, and I'm excited to explore mobile development next. 
         </div>
     </section>
 
+    <!-- Contact Section -->
+<section id="contact" style="background: #f8f9fa; padding: 3rem 2rem;">
+    <div class="section-container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <h2 style="color: var(--primary); margin-bottom: 1rem;">Contact Me</h2>
+        <p>You can reach me via email at:</p>
+        <p style="font-size: 1.2rem; font-weight: 600; margin-top: 0.5rem;">
+            <a href="mailto:201811483@gordoncollege.edu.ph" style="color: var(--primary); text-decoration: none;">
+                201811483@gordoncollege.edu.ph
+            </a>
+        </p>
+    </div>
+</section>
+
     <!-- Footer -->
     <footer>
         <div class="section-container">
@@ -788,6 +902,39 @@ My interests are expanding, and I'm excited to explore mobile development next. 
             <p>&copy; 2025 All rights reserved.</p>
         </div>
     </footer>
+<script>
+    (function() {
+        const carousel = document.querySelector('#projects .carousel');
+        const inner = carousel.querySelector('.carousel-inner');
+        const items = carousel.querySelectorAll('.carousel-item');
+        const prevBtn = carousel.querySelector('.carousel-control.prev');
+        const nextBtn = carousel.querySelector('.carousel-control.next');
+        const dots = carousel.querySelectorAll('.carousel-dots .dot');
+        let currentIndex = 0;
 
+        function updateCarousel() {
+            inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentIndex].classList.add('active');
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? items.length - 1 : currentIndex - 1;
+            updateCarousel();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
+            updateCarousel();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                currentIndex = parseInt(dot.getAttribute('data-slide'));
+                updateCarousel();
+            });
+        });
+    })();
+</script>
 </body>
 </html>
